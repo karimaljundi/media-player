@@ -13,11 +13,13 @@ export default function Home() {
   const [profile, setProfile] = useState([]);
   useEffect(()=>{
     async function fetchData(){
-      if (session && session.accessToken){
+      if (session && session.accessToken)
+      {
         console.log(session.accessToken);
 
         setX(session.accessToken);
-        const response = await fetch('https://api.spotify.com/v1/me',{
+        const response = await fetch('https://api.spotify.com/v1/me',
+        {
           headers: {
             Authorization: `Bearer ${session.accessToken}`
           }
@@ -29,7 +31,7 @@ export default function Home() {
     }
     fetchData()}, [session]);
     
-  }
+  
   return (
     <div>
       <Navbar />
@@ -42,5 +44,5 @@ export default function Home() {
        </main>
     </div>
   )
-   
+}
 
