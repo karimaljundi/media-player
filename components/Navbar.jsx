@@ -3,6 +3,11 @@ import React from 'react'
 import { Space_Mono } from "next/font/google"
 import { useState } from 'react'
 import logo from '../public/logo.png';
+import { signOut } from 'next-auth/react';
+import { signIn } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
+import SigninButton from './SigninButton';
+
 
  
 
@@ -67,6 +72,8 @@ function Navbar() {
           ))}
         </ul>
       )}
+        
+            <SigninButton/>
     </div>
   );
 
